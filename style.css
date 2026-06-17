@@ -41,72 +41,79 @@ body {
    Banner Section
    ============================================ */
 
+/* Clean, Solid Banner Setup */
 .banner {
-    /* 1. Links your background image and adds a subtle dark overlay for text readability */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('banner antibodies.png');
-    
-    /* 2. Controls the sizing (adjust 70vh up or down to change how tall the banner is) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('banner-bg.jpg');
     min-height: 70vh; 
-    
-    /* 3. Ensures the image scales elegantly on both desktop and mobile layouts */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     
-    /* 4. Keeps your text perfectly centered horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: #ffffff;
     
-    /* 5. Clean contrast color for text */
-    color: #ffffff; 
+    /* Strict layout layout boundaries to prevent moving overflows */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
-/* Banner Content Text spacing */
+/* Text Container */
 .banner-content {
     padding: 20px;
-    max-width: 800px;
+    max-width: 900px;
+    z-index: 2; /* Ensures text stays cleanly layered on top */
 }
 
-.banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,60 Q300,30 600,60 T1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"></path></svg>');
-    background-repeat: repeat-x;
-    animation: wave 15s linear infinite;
-}
-
-@keyframes wave {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(1200px);
-    }
-}
-
-.banner-content {
-    position: relative;
-    z-index: 1;
-}
-
-.banner h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+/* Significantly Increased Heading Font Size */
+.banner-content h1 {
+    font-size: 4.5rem; /* Large, premium academic styling */
+    margin-top: 0;
+    margin-bottom: 20px;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-.banner p {
-    font-size: 1.3rem;
+/* Significantly Increased Subtitle Font Size */
+.banner-content p {
+    font-size: 1.85rem; /* Clean, highly readable line */
+    margin: 0;
     font-weight: 300;
-    letter-spacing: 1px;
+    line-height: 1.5;
+    opacity: 0.95;
 }
 
+/* Smooth, completely static fade-in effect for the text elements (No moving tracks) */
+.fade-in, .fade-in-delay {
+    animation: simpleFade 1.2s ease-out forwards;
+}
+
+.fade-in-delay {
+    animation-delay: 0.4s;
+    opacity: 0; /* Starts hidden, then gently fades straight into view */
+}
+
+@keyframes simpleFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustment for tablets and mobile devices */
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 2.8rem;
+    }
+    .banner-content p {
+        font-size: 1.4rem;
+    }
+}
 /* ============================================
    Navigation
    ============================================ */
