@@ -211,3 +211,62 @@ body {
     40% { transform: translateY(-10px) rotate(45deg); }
     60% { transform: translateY(-5px) rotate(45deg); }
 }
+/* Center the Get in Touch section content */
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 20px;
+    max-width: 600px; /* Keeps the text readable by preventing it from being too wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* --- Professional Publication Buttons --- */
+.preview-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.preview-link:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+}
+/* --- Mobile Responsive Stability Fixes --- */
+@media (max-width: 768px) {
+    /* Stack columns and ensure text is centered */
+    .about-content, .highlight-card { 
+        flex-direction: column !important; 
+        text-align: center; 
+    }
+
+    /* Force images to be responsive so they don't break the layout */
+    .profile-picture, .mechanism-graphic, .highlight-gif {
+        width: 100% !important;
+        max-width: 400px !important;
+        height: auto !important;
+        margin: 0 auto 20px auto;
+    }
+
+    /* Ensure media grid collapses to one column */
+    .media-grid { 
+        grid-template-columns: 1fr !important; 
+    }
+
+    /* Prevent text from overflowing */
+    .section { padding: 50px 20px !important; }
+    
+    /* Ensure buttons stack neatly */
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
