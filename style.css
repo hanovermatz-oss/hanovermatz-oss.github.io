@@ -41,7 +41,6 @@ body {
    Banner Section
    ============================================ */
 
-/* Clean, Solid Banner Setup */
 .banner {
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('banner-antibodies.png');
     min-height: 70vh; 
@@ -55,65 +54,33 @@ body {
     text-align: center;
     color: #ffffff;
     
-    /* Strict layout layout boundaries to prevent moving overflows */
     width: 100%;
     box-sizing: border-box;
     position: relative;
 }
 
-/* Text Container */
 .banner-content {
     padding: 20px;
     max-width: 900px;
-    z-index: 2; /* Ensures text stays cleanly layered on top */
+    z-index: 2;
 }
 
-/* Significantly Increased Heading Font Size */
 .banner-content h1 {
-    font-size: 4.5rem; /* Large, premium academic styling */
+    font-size: 4.5rem;
     margin-top: 0;
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
-/* Significantly Increased Subtitle Font Size */
 .banner-content p {
-    font-size: 1.85rem; /* Clean, highly readable line */
+    font-size: 1.85rem;
     margin: 0;
     font-weight: 300;
     line-height: 1.5;
     opacity: 0.95;
 }
 
-/* Smooth, completely static fade-in effect for the text elements (No moving tracks) */
-.fade-in, .fade-in-delay {
-    animation: simpleFade 1.2s ease-out forwards;
-}
-
-.fade-in-delay {
-    animation-delay: 0.4s;
-    opacity: 0; /* Starts hidden, then gently fades straight into view */
-}
-
-@keyframes simpleFade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive adjustment for tablets and mobile devices */
-@media (max-width: 768px) {
-    .banner-content h1 {
-        font-size: 2.8rem;
-    }
-    .banner-content p {
-        font-size: 1.4rem;
-    }
-}
 /* ============================================
    Navigation
    ============================================ */
@@ -369,11 +336,8 @@ body {
 
 .media-grid {
     display: grid;
-    /* 1. Allows columns to expand wider up to 550px each */
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
     gap: 40px;
-    
-    /* 2. Expands the max container boundary so the widescreen video layout isn't squished */
     max-width: 1100px; 
     margin: 0 auto;
 }
@@ -519,82 +483,60 @@ body {
 }
 
 /* ============================================
-   Animations
+   Animations Configuration Engine
    ============================================ */
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 1.2s ease-out forwards;
 }
 
 .fade-in-delay {
-    animation: fadeIn 1s ease-out 0.3s both;
+    animation: fadeIn 1.2s ease-out 0.4s both;
 }
 
 .slide-in-left {
-    animation: slideInLeft 0.8s ease-out;
+    animation: slideInLeft 0.8s ease-out forwards;
 }
 
 .slide-in-right {
-    animation: slideInRight 0.8s ease-out;
+    animation: slideInRight 0.8s ease-out forwards;
 }
 
 .fade-in-up {
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 /* ============================================
-   Responsive Design
+   Responsive Design Rules
    ============================================ */
 
 @media (max-width: 768px) {
-    .banner h1 {
-        font-size: 2.2rem;
+    .banner-content h1 {
+        font-size: 2.8rem;
     }
 
-    .banner p {
-        font-size: 1rem;
+    .banner-content p {
+        font-size: 1.4rem;
     }
 
     .about-content {
@@ -652,7 +594,7 @@ body {
         padding: 60px 15px;
     }
 
-    .banner h1 {
+    .banner-content h1 {
         font-size: 1.8rem;
     }
 
@@ -673,15 +615,12 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .podcast-embed {
-        display: none;
-    }
-
-    .video-embed {
-        display: none;
-    }
-
     .media-item {
         padding: 15px;
+    }
+    
+    /* Cleaned mobile display properties so video and podcast objects show properly */
+    .podcast-embed, .video-embed {
+        display: block;
     }
 }
