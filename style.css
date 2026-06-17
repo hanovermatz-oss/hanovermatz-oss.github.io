@@ -8,7 +8,16 @@
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+/* Ensure mobile devices don't shrink text too small */
+html {
+    -webkit-text-size-adjust: 100%;
+}
 
+/* Ensure buttons are clearly visible and not hidden by overflow */
+.contact-links {
+    padding: 20px; /* Add breathing room around buttons */
+    overflow: visible; /* Ensure buttons aren't cut off */
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 100%; overflow-x: hidden; }
 
@@ -77,3 +86,28 @@ img {
    ============================================ */
 .section { padding: 60px 0; }
 .banner { min-height: 50vh; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
+/* Ensure buttons are touch-friendly and visible */
+.link-button, 
+.link-button-large {
+    display: inline-block;
+    padding: 16px 32px !important; /* Larger touch area */
+    font-size: 1.1rem !important;  /* Ensure text is readable */
+    min-width: 200px;              /* Ensure they don't shrink too small */
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Ensure the contact section doesn't hide them */
+.contact-links {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .contact-links {
+        flex-direction: row; /* Switch back to side-by-side on desktop */
+    }
+}
