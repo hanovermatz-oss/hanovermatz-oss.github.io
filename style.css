@@ -42,12 +42,31 @@ body {
    ============================================ */
 
 .banner {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 120px 20px;
+    /* 1. Links your background image and adds a subtle dark overlay for text readability */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('banner antibodies.jpg');
+    
+    /* 2. Controls the sizing (adjust 70vh up or down to change how tall the banner is) */
+    min-height: 70vh; 
+    
+    /* 3. Ensures the image scales elegantly on both desktop and mobile layouts */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* 4. Keeps your text perfectly centered horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    
+    /* 5. Clean contrast color for text */
+    color: #ffffff; 
+}
+
+/* Banner Content Text spacing */
+.banner-content {
+    padding: 20px;
+    max-width: 800px;
 }
 
 .banner::before {
