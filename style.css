@@ -1,3 +1,22 @@
+/* --- Global Typography Refinements --- */
+body {
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Scroll-Animation Prep --- */
+/* This hides your cards so they can 'fade in' when they enter the viewport */
+.highlight-card, 
+.media-item {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* This is the class your JavaScript adds when the user scrolls down */
+.fade-in-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
 /* ============================================
    Global Styles & Variables
    ============================================ */
