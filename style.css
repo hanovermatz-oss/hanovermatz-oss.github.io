@@ -255,13 +255,13 @@ body {
 .highlight-gif {
     flex: 1;
     width: 100%;
-    max-width: 420px;
+    max-width: 500px; /* Increased from 420px to give it more presence */
     height: auto; 
-    aspect-ratio: 3 / 2; 
-    object-fit: cover; /* Fixed: Changes from 'contain' to fill the canvas edge-to-edge beautifully */
+    aspect-ratio: 16 / 9; /* Switched to a wider, standard video/animation format */
+    object-fit: contain; /* Ensures the entire GIF is shown without cropping edges */
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
-    background-color: var(--light-bg);
+    background-color: #f8f9fa; /* Slightly lighter background to frame the GIF */
 }
 
 .highlight-card-text-wrapper {
