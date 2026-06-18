@@ -22,7 +22,7 @@ body {
 .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
 
 /* ============================================
-   2. Components & Layout
+   2. Banner & Navigation
    ============================================ */
 .banner {
     position: relative;
@@ -59,13 +59,15 @@ body {
 .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 .media-item { background: #f8f9fa; padding: 30px; border-radius: 12px; }
 
-/* Media/Image Elements */
-.profile-picture, .mechanism-graphic, .highlight-gif { width: 100%; border-radius: 12px; border: 3px solid var(--secondary-color); }
-.video-container { width: 100%; aspect-ratio: 16/9; margin-top: 15px; }
+/* Image and Media Constraints */
+.profile-picture { width: 100%; max-width: 350px; border-radius: 12px; border: 3px solid var(--secondary-color); margin: 0 auto; }
+.mechanism-graphic { width: 100%; max-width: 350px; border-radius: 12px; border: 3px solid var(--secondary-color); margin-top: 25px; }
+.highlight-gif { width: 100%; max-width: 500px; border-radius: 12px; border: 3px solid var(--secondary-color); }
+.video-container { width: 100%; aspect-ratio: 16/9; margin-top: 15px; background: #000; border-radius: 8px; overflow: hidden; }
 iframe { width: 100%; height: 100%; border: none; }
 
 /* ============================================
-   4. Buttons & Mobile
+   4. Buttons & Mobile Responsiveness
    ============================================ */
 .link-button-large { display: inline-block; padding: 12px 24px; border: 2px solid var(--primary-color); border-radius: 8px; text-decoration: none; color: var(--primary-color); font-weight: 600; margin-top: 15px; transition: 0.3s; }
 .link-button-large:hover { background-color: var(--primary-color); color: white; }
