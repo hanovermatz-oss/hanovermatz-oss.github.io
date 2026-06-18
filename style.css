@@ -270,3 +270,40 @@ body {
         gap: 15px;
     }
 }
+/* About Section Spacing */
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.research-interests {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+/* Research Highlight Buttons */
+.paper-preview-card {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.preview-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.preview-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
