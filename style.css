@@ -287,7 +287,7 @@ body {
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid var(--secondary-color);
+    /* Removed border-left: 4px solid var(--secondary-color); */
 }
 
 .preview-tag {
@@ -295,15 +295,24 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--secondary-color);
+    display: block;
+    margin-bottom: 5px;
 }
 
 .preview-link {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 16px;
-    background: var(--primary-color);
-    color: white;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px; /* Pill shape */
+    color: var(--primary-color); /* Visible text */
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: 600;
     font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.preview-link:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
